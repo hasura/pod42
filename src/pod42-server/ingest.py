@@ -10,7 +10,7 @@ from langchain.vectorstores.pinecone import Pinecone
 
 def ingest_docs():
     """Get documents from web pages."""
-    loader = ReadTheDocsLoader("langchain.readthedocs.io/en/latest/")
+    loader = ReadTheDocsLoader("hasura.io/docs/latest/")
     raw_documents = loader.load()
     text_splitter = NLTKTextSplitter.from_tiktoken_encoder(
         chunk_size=800,
