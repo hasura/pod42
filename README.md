@@ -3,7 +3,7 @@
 A Discord bot to to answer question based on docs using the latest ChatGPT API, built on [Hasura GraphQL
 Engine](https://github.com/hasura/graphql-engine) and [LangChain](https://github.com/hwchase17/langchain).
 
-[![Edit hasura-pod42](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/github/hasura/hasura-pod42/master?fontsize=14)
+You can try out the bot on our [Discord](https://discord.gg/hasura)
 
 It features include:
 - Asynchronous architecture based on the Hasura events system with rate limiting and retries.
@@ -27,32 +27,12 @@ Made with :heart: by <a href="https://hasura.io">Hasura</a>
 
 ### Steps to Setup Hasura Pod42
 
-- Deploy GraphQL Engine on Hasura Cloud and setup PostgreSQL via Neon:
-  [![Deploy to Hasura Cloud](https://graphql-engine-cdn.hasura.io/img/deploy_to_hasura.png)](https://cloud.hasura.io/signup)
-- Get the Hasura app URL (say `hasura-pod42.hasura.app`)
-- Clone this repo:
-  ```bash
-  git clone https://github.com/hasura/pod42.git
-  ```
-- [Install Hasura CLI](https://hasura.io/docs/latest/graphql/core/hasura-cli/install-hasura-cli.html)
-- Goto `hasura/` and edit `config.yaml`:
-  ```yaml
-  endpoint: https://hasura-pod42.hasura.app
-  ```
-- Apply the migrations:
-  ```bash
-  hasura metadata apply
-  hasura migrate apply
-  hasura metadata reload
-  ```
-- Edit `HASURA_GRAPHQL_ENGINE_HOSTNAME` in `src/constants.js` and set it to the Hasura app URL:
-  ```js
-  const HASURA_GRAPHQL_ENGINE_HOSTNAME = 'realtime-backend2.hasura.app/v1/graphql';
-  ```
-- Run the app (go to the root of the repo):
-  ```bash
-  npm start
-  ```
+- Setup `src/pod42-server`
+- Use the url to populate `EVENT_TRIGGER_WEBHOOK_URL` in `hasura-cloud-deploy-config.yaml`
+- You can use the one-click to deploy on Hasura Cloud to get started quickly:
+  
+  [![Deploy to Hasura Cloud](https://hasura.io/deploy-button.svg)]( https://cloud.hasura.io/deploy?github_repo=https://github.com/hasura/pod42#comparison-text-davinci-003-vs-gpt-35-turbo&hasura_dir=hasura)
+
 
 ## Architecture
 ![Pod42 Arch](assets/hasura-arch-pod42.png)
