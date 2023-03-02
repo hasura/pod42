@@ -1,0 +1,9 @@
+- name: Pod42
+  kind: postgres
+  configuration:
+    connection_info:
+      database_url:
+        from_env: PG_DATABASE_URL
+      isolation_level: read-committed
+      use_prepared_statements: true
+  tables: "!include Pod42/tables/tables.yaml"

@@ -1,0 +1,5 @@
+gql
+aiohttp
+websockets
+backoff
+discord.py

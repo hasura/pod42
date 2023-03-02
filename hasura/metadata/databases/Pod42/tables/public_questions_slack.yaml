@@ -1,0 +1,40 @@
+table:
+  name: questions_slack
+  schema: public
+array_relationships:
+  - name: answers_slacks
+    using:
+      foreign_key_constraint_on:
+        column: question_id
+        table:
+          name: answers_slack
+          schema: public
+event_triggers:
+  - name: QuestionAnswerTriggerGcloud
+    definition:
+      enable_manual: false
+      insert:
+        columns: '*'
+    retry_conf:
+      interval_sec: 10
+      num_retries: 0
+      timeout_sec: 60
+    webhook: "{{EVENT_TRIGGER_WEBHOOK_URL}}"
+    request_transform:
+      body:
+        action: transform
+        template: |
+          { "body" : {
+            "question": {{$body.event.data.new.question}},
+            "id": {{$body.event.data.new.id}}
+          }
+          }
+      template_engine: Kriti
+      version: 2
+    cleanup_config:
+      batch_size: 10000
+      clean_invocation_logs: false
+      clear_older_than: 168
+      paused: false
+      schedule: 0 0 * * *
+      timeout: 60

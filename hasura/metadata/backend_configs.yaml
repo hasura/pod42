@@ -1,0 +1,5 @@
+dataconnector:
+  athena:
+    uri: http://localhost:8081/api/v1/athena
+  snowflake:
+    uri: http://localhost:8081/api/v1/snowflake

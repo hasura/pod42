@@ -1,0 +1,6 @@
+langchain
+openai 
+pinecone-client
+transformers
+tiktoken
+sanic
