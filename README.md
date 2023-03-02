@@ -3,7 +3,7 @@
 A Discord bot to answer questions based on docs using the latest ChatGPT API, built on [Hasura GraphQL
 Engine](https://github.com/hasura/graphql-engine) and [LangChain](https://github.com/hwchase17/langchain).
 
-You can try the bot on our [Discord](https://discord.gg/hasura), read more about the annoucement [here](https://hasura.io/blog/announcing-pod42-the-hasura-chatgpt-bot/)
+You can try the bot on our [Discord](https://discord.gg/hasura), read more about the annoucement [here].(https://hasura.io/blog/announcing-pod42-the-hasura-chatgpt-bot/)
 
 Its features include:
 - Asynchronous architecture based on the Hasura events system with rate limiting and retries.
