@@ -38,7 +38,6 @@ We had the following objectives when creating the bot,
 ### Steps to Setup Hasura Pod42
 
 - Setup [pod42-server](https://github.com/hasura/pod42/tree/main/src/pod42-server)
-- Use the URL to populate `EVENT_TRIGGER_WEBHOOK_URL` in `hasura-cloud-deploy-config.yaml`
 - You can use the one-click to deploy on Hasura Cloud to get started quickly:
   
   [![Deploy to Hasura Cloud](https://hasura.io/deploy-button.svg)]( https://cloud.hasura.io/deploy?github_repo=https://github.com/hasura/pod42&hasura_dir=hasura)
