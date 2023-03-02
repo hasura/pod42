@@ -16,9 +16,9 @@ Made with :heart: by <a href="https://hasura.io">Hasura</a>
 ----------------
 ## Motivation
 
-We at Hasura always believe that we are better at caring for plumbing so they can focus on their core problems. Hence, when text-davinci-003 came out, we saw an opportunity to resolve our user's query on Discord.
+We at Hasura always believe that we are better at caring for plumbing so they can focus on their core problems. Hence, when `text-davinci-003` came out, we saw an opportunity to resolve our user's query on Discord.
 
-- We had the following objectives when creating the bot,
+We had the following objectives when creating the bot,
 - Use Hasura's docs/blogs/learning courses.
 - Always list sources when answering.
 - Better to say "I don't know" over an incorrect answer.
@@ -41,7 +41,7 @@ We at Hasura always believe that we are better at caring for plumbing so they ca
 - Use the URL to populate `EVENT_TRIGGER_WEBHOOK_URL` in `hasura-cloud-deploy-config.yaml`
 - You can use the one-click to deploy on Hasura Cloud to get started quickly:
   
-  [![Deploy to Hasura Cloud](https://hasura.io/deploy-button.svg)]( https://cloud.hasura.io/deploy?github_repo=https://github.com/hasura/pod42#comparison-text-davinci-003-vs-gpt-35-turbo&hasura_dir=hasura)
+  [![Deploy to Hasura Cloud](https://hasura.io/deploy-button.svg)]( https://cloud.hasura.io/deploy?github_repo=https://github.com/hasura/pod42&hasura_dir=hasura)
 
 
 ## Architecture
@@ -81,19 +81,24 @@ Tasks:
 For Hasura's use case, we want to emphasize the correctness of the answers; it's better for us if Pod42 says "I Don't Know" instead of bluffing an answer.
 
 ### Example: When the answer exists in Docs
+**text-davinci-003**:
 ![Pod42 text-davinci-003](assets/hasura-pod42-davinci-answer-1.png)
 
+**gpt-3.5-turbo**:
 ![Pod42 gpt-3.5-turbo](assets/hasura-pod42-chatgpt-answer-1.png)
 
 ### Example: When Question is Misunderstood
+**text-davinci-003**:
 ![Pod42 text-davinci-003](assets/hasura-pod42-davinci-incorrect-answer-1.png)
 
-The above answer is entirely false; it misunderstood the question as Discord passed a user-id instead of the text "@Cache."
+The above answer is entirely false; it misunderstood the question as Discord passed a user-id instead of the text `@Cache`.
 
+**gpt-3.5-turbo**:
 ![Pod42 gpt-3.5-turbo](assets/hasura-pod42-chatgpt-answer-2.png)
 
 The above is a much better answer; it might prompt the user to ask the question better and at which point you get the following outcome.
 
+**gpt-3.5-turbo**:
 ![Pod42 gpt-3.5-turbo](assets/hasura-pod42-chatgpt-answer-3.png)
 
 
