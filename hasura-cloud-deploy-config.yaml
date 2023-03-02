@@ -1,0 +1,10 @@
+name: "Hasura Pod42"
+
+user-env:
+  EVENT_TRIGGER_WEBHOOK_URL:
+    description: "Pod42 Server URL"
+    mandatory: true
+  PG_DATABASE_URL:
+    description: "Postgres database URL"
+    mandatory: true
+
