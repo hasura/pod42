@@ -78,11 +78,13 @@ Tasks:
 ## Comparison: text-davinci-003 vs gpt-3.5-turbo
 
 For Hasura's use case, we want to emphasize the correctness of the answers; it's better for us if Pod42 says "I Don't Know" instead of bluffing an answer.
-We see that `gpt-3.5-turbo` does much better in that regard. It's also more verbose but many of our new users like the details.
+We see that `gpt-3.5-turbo` does much better in that regard. It's also more verbose, but many new users like the details, and in terms of latency, `gpt-3.5-turbo` was ~60% faster.
 
-Also, We found that passing information part `user` role in prompt is more effective at the moment vs `system` role.
 
-All the examples use the same prompt and vectorstore data.
+Also, We found that passing information part `user` role in the prompt is more effective at the moment vs. the `system` role.
+
+All the examples use the same prompt and vector store data.
+
 
 ### Example: When the answer exists in Docs
 **text-davinci-003**:
