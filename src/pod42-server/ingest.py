@@ -1,7 +1,6 @@
 """Load markdown, html, text from files, clean up, split, ingest into Pinecone."""
-import tiktoken
 import pinecone
-
+import tiktoken
 from langchain.document_loaders import ReadTheDocsLoader
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.text_splitter import NLTKTextSplitter
@@ -20,7 +19,7 @@ def ingest_docs():
     embeddings = OpenAIEmbeddings()
     pinecone.init(
         api_key="YOUR_API_KEY",  # find at app.pinecone.io
-        environment="YOUR_ENV"  # next to api key in console
+        environment="YOUR_ENV",  # next to api key in console
     )
     Pinecone.from_documents(documents, embeddings)
 
