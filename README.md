@@ -39,7 +39,7 @@ We had the following objectives when creating the bot,
 
 - Setup [pod42-server](https://github.com/hasura/pod42/tree/main/src/pod42-server)
 - You can use the one-click to deploy on Hasura Cloud to get started quickly:
-  
+
   [![Deploy to Hasura Cloud](https://hasura.io/deploy-button.svg)]( https://cloud.hasura.io/deploy?github_repo=https://github.com/hasura/pod42&hasura_dir=hasura)
 
 
@@ -78,6 +78,11 @@ Tasks:
 ## Comparison: text-davinci-003 vs gpt-3.5-turbo
 
 For Hasura's use case, we want to emphasize the correctness of the answers; it's better for us if Pod42 says "I Don't Know" instead of bluffing an answer.
+We see that `gpt-3.5-turbo` does much better in that regard. It's also more verbose but many of our new users like the details.
+
+Also, We found that passing information part `user` role in prompt is more effective at the moment vs `system` role.
+
+All the examples use the same prompt and vectorstore data.
 
 ### Example: When the answer exists in Docs
 **text-davinci-003**:
@@ -100,7 +105,19 @@ The above is a much better answer; it might prompt the user to ask the question 
 **gpt-3.5-turbo**:
 ![Pod42 gpt-3.5-turbo](assets/hasura-pod42-chatgpt-answer-3.png)
 
+### Example: Answer Quality
+**text-davinci-003**:
+![Pod42 text-davinci-003](assets/pod42-davinci-answer-4.png)
 
+**gpt-3.5-turbo**:
+![Pod42 gpt-3.5-turbo](assets/pod42-chatgpt-answer-4.png)
+
+### Example: Answer Verbosity
+**text-davinci-003**:
+![Pod42 text-davinci-003](assets/pod42-davinci-answer-5.png)
+
+**gpt-3.5-turbo**:
+![Pod42 gpt-3.5-turbo](assets/pod42-chatgpt-answer-5.png)
 ---
 Maintained with :heart: by <a href="https://hasura.io">Hasura</a>
 
